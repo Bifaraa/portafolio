@@ -1,0 +1,28 @@
+---
+import Enlace from "./Enlace.astro";
+---
+<nav>
+  <Enlace contenido="Proyectos" enlace="#" />
+  <Enlace contenido="Habilidades" enlace="#" />
+  <Enlace contenido="Sobre mi" enlace="#" />
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    gap: 5em;
+    width: 100%;
+    justify-content: center;
+    margin: 1em 0em 3.5em 0em;
+    animation:scale-up-bottom 0.4s;
+  }
+
+  @keyframes scale-up-bottom{
+    0% {
+      transform:scale(.5);transform-origin:center bottom;
+    }
+    100% {
+      transform:scale(1);transform-origin:center bottom;
+    }
+  }
+</style>

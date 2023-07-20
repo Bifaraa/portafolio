@@ -1,0 +1,148 @@
+---
+import Menu from '../Menu/Menu.astro';
+---
+<header>
+  <section class="section__titulo">
+    <h2>Desarrollador <br/> <span>Front-End</span></h2>
+    <div class="container__hoja__vida">
+      <img src="/public/img/arrow_to_right_line (1).png" alt="icono de descarga" />
+      <a>Descargar <br/> hoja de vida</a>
+      </div>
+  </section>
+  <figure>
+    <img src="/public/img/Editor_de_fotos__BeFunky-removebg-preview.png" alt="foto de jhon eduard sierra" />
+    <h1>
+      Jhon Eduard Sierra Zuluaga
+    </h1>  
+  </figure>
+  <div class="linea__lateral linea"></div>
+  <div class="linea__uno linea"></div> 
+  <div class="linea__dos linea"></div>
+  <img class="flecha__abajo" src="/public/img/arrows_down_fill.png" alt="flecha hacia abajo" />
+  <Menu />
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation:scale-up-bottom 0.4s;
+  }
+
+  figure > h1 {
+    color: #fff;
+    font-size: .7em;
+  }
+  
+  .section__titulo {
+    align-self: center;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .section__titulo {
+    color: var(--text);
+  }
+  .section__titulo > h2 > span {
+    color: #fff;
+    font-size: 1.7em;
+    text-shadow: -3px -3px 0 #2E0D76, 3px -3px 0 #2E0D76, -3px 3px 0 #2E0D76, 3px 3px 0 #2E0D76;
+  }
+  
+  .linea__lateral {
+    position: absolute;
+    width: 40vh;
+    height: 2px;
+    transform: rotate(90deg);
+    left: 0%;
+    top: 60%;
+    background-image: linear-gradient(to right, #fff, #2E0D76);
+  }
+
+  .linea__uno, .linea__dos {
+    position: absolute;
+    width: 40vh;
+    height: 2px;
+    bottom: 0px;
+    background-image: linear-gradient(to right, #fff, #2E0D76);
+    animation:scale-up-bottom 0.4s;
+  }
+
+  .linea__uno {
+    left: 20%;
+  }
+
+  .linea__dos {
+    right: 20%;
+  }
+
+  .container__hoja__vida {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    font-size: .7em;
+    position: relative;
+    animation:scale-up-bottom 0.4s;
+  }
+
+  .container__hoja__vida > a{
+    cursor: pointer;
+  }
+
+  .container__hoja__vida > img {
+    animation: lados 1s linear infinite;
+    left: 20%;
+    top:3px;
+    position: absolute;
+  }
+
+  .flecha__abajo{
+    position: absolute;
+    bottom: 0px;
+    cursor: pointer;
+    animation: saltar 1s ease-in infinite;
+  }
+
+  @keyframes saltar {
+    0%, 100% {
+      bottom: 0px;
+    }
+    25%, 75%{
+      bottom: 2px;
+    }
+    50% {
+      bottom: 4px;
+    }
+  }
+
+  @keyframes lados {
+    0%, 100% {
+      left: 20%;
+    }
+    25%, 75% {
+      left: 21%;
+    }
+    50% {
+      left: 22%;
+    }
+  }
+  
+  @keyframes scale-up-bottom{
+    0% {
+      transform:scale(.5);transform-origin:center bottom;
+    }
+    100% {
+      transform:scale(1);transform-origin:center bottom;
+    }
+  }
+
+</style>

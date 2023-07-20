@@ -1,0 +1,87 @@
+---
+interface Props {
+  nombre: string;
+  url: string;
+  img: string;
+  descripcion: string;
+}
+
+const { nombre, url, img, descripcion} = Astro.props;
+---
+
+<div class="container__items___menu">
+  <a href={ url } >
+    <img src={ img } alt={ descripcion }>
+  </a>
+  <span>{ nombre }</span>
+</div>
+
+<style>
+  .container__items___menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: .7;
+  }
+
+  .container__items___menu:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .2s ease-in;
+  }
+
+  .container__items___menu:not(:hover){
+    opacity: .7;
+    transition: opacity .2s ease-in;
+  }
+
+  .container__items___menu:first-child {
+    margin-top: 0em;
+  }
+  .container__items___menu {
+    margin-top: 1em;
+  }
+
+  span {
+    color: var(--text);
+    visibility: hidden;
+    font-size: .5em;
+    border: 1px solid var(--border-boton);
+    padding: .5em;
+    border-radius: 5px;
+    transition: visibility .1s ease-in-out;
+  }
+
+  span:hover {
+    transition: visibility .5s ease-out;
+  }
+
+  span:not(:hover){
+    visibility: hidden;
+    transition: visibility .2s ease-out;
+  }
+
+</style>
+
+<script>
+  const listContainers = document.querySelectorAll('.container__items___menu')
+
+  listContainers.forEach((container, index) => {
+    const span = container.querySelector('span')
+    if (span === null) return
+
+    container.addEventListener('mouseenter', () => {
+      span.style.visibility = 'visible'
+    })
+    container.addEventListener('mouseleave', () => {
+      span.style.visibility = 'hidden'
+    })
+  })
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+---
+import IconoMenu from "./IconoMenu.astro";
+---
+
+<address>
+  <IconoMenu nombre="Linkedin" url="#" img="/public/img/redes_sociales/linkedin_fill.png" descripcion="icono de linkedin" />
+  <IconoMenu nombre="Github" url="#" img="/public/img/redes_sociales/github_fill.png" descripcion="icono de github" />
+  <IconoMenu nombre="Gmail" url="#" img="/public/img/redes_sociales/mail_fill.png" descripcion="icono de gmail" />
+  <IconoMenu nombre="Whatsapp" url="#" img="/public/img/redes_sociales/whatsapp_fill.png" descripcion="icono de whatsapp" />
+</address>
+
+<style>
+  address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    right: 3em;
+    top: 0px;
+    height: 100vmin;
+    margin-right: 1em;
+  }
+  @media (max-width: 700px) {
+    address {
+      margin-top: 3em;
+    }
+  }
+</style>
