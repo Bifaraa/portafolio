@@ -29,6 +29,7 @@ import Menu from '../Menu/Menu.astro';
     align-items: start;
     position: relative;
     flex-wrap: wrap;
+    min-height: 90vh;
   }
 
   figure {
@@ -40,7 +41,7 @@ import Menu from '../Menu/Menu.astro';
 
   figure > h1 {
     color: #fff;
-    font-size: .7em;
+    font-size: .9em;
   }
   
   .section__titulo {
@@ -54,8 +55,10 @@ import Menu from '../Menu/Menu.astro';
   }
   .section__titulo > h2 > span {
     color: #fff;
-    font-size: 1.7em;
+    font-size: 2.5em;
     text-shadow: -3px -3px 0 #2E0D76, 3px -3px 0 #2E0D76, -3px 3px 0 #2E0D76, 3px 3px 0 #2E0D76;
+    display: inline-block;
+    animation:tracking-in-expand-forward-bottom 0.4s linear both;
   }
   
   .linea__lateral {
@@ -89,7 +92,7 @@ import Menu from '../Menu/Menu.astro';
     display: flex;
     justify-content: center;
     font-style: italic;
-    font-size: .7em;
+    font-size: .9em;
     position: relative;
     animation:scale-up-bottom 0.4s;
   }
@@ -145,4 +148,65 @@ import Menu from '../Menu/Menu.astro';
     }
   }
 
+@keyframes tracking-in-expand-forward-bottom {
+  0% {
+    letter-spacing:-.2em;transform:translateZ(-700px) translateY(100px);
+    opacity:0
+  }
+  40% {
+    opacity:.6
+  }
+  100%
+    {
+      transform:translateZ(0) translateY(0);
+      opacity:1
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .linea__dos, .linea__uno, .linea__lateral {
+      visibility: hidden;
+      order: 5;
+    }
+
+    figure {
+      order: 1;
+      width: 100%;
+      margin-top: 0px;
+    }
+
+    .section__titulo{
+      order: 2;
+      margin: auto;
+    }
+
+    header {
+      min-width: 100vw;
+      min-height: auto;
+      justify-content: flex-start;
+      margin-left: 0em;
+      align-items: flex-end;
+    }
+
+    .section__titulo > h2 > span {
+      font-size: 1.7em;
+    }
+
+    .flecha__abajo {
+      left: calc(50% - 20px);
+      bottom: 20px;
+      margin-bottom: -3em;
+    }
+    
+    .container__hoja__vida{
+      margin-bottom: 3em;
+      width: 100vw;
+      order: 3;
+      display: block;
+    }
+
+    figure > img {
+      height: 20em;
+    }
+  }
 </style>

@@ -19,6 +19,9 @@ const { contenido, enlace } = Astro.props;
     border-radius: 10px;
     padding: .7em 2em;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
   }
 
@@ -51,7 +54,7 @@ const { contenido, enlace } = Astro.props;
   div > a{
     color: var(--text);
     text-decoration: none;
-    font-size: .7em;
+    font-size: 1.2em;
    }
 
    @keyframes pintar {
@@ -70,4 +73,20 @@ const { contenido, enlace } = Astro.props;
       height: 0%;
     }
    }
+
+  @media (max-width: 800px) {
+    div {
+      position: sticky;
+      min-width: 100%;
+      padding: 2em 0em;
+      left: 0px;
+      scroll-snap-align: start;
+      background-image: linear-gradient(to left, #ED6C09, #7D3611);
+      text-align: center;
+    }
+    a {
+      display: block;
+      width: 50%;
+    }
+  }
 </style>

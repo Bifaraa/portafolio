@@ -45,7 +45,7 @@ const { nombre, url, img, descripcion} = Astro.props;
   span {
     color: var(--text);
     visibility: hidden;
-    font-size: .5em;
+    font-size: .8em;
     border: 1px solid var(--border-boton);
     padding: .5em;
     border-radius: 5px;
@@ -59,6 +59,12 @@ const { nombre, url, img, descripcion} = Astro.props;
   span:not(:hover){
     visibility: hidden;
     transition: visibility .2s ease-out;
+  }
+
+  @media (max-width: 1000px) {
+    img {
+      width: 40px;
+    }
   }
 
 </style>
